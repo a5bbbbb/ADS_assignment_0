@@ -4,21 +4,17 @@ import java.util.Collection;
 import java.util.Scanner;
 
 public class Main {
+    private static final Scanner scan = new Scanner(System.in);
     public static void main(String[] args) {
 
-        Scanner scan = new Scanner(System.in);
-        ArrayList<Integer> a = new ArrayList<>();
         int n = scan.nextInt();
-        for(int i = 0; i < n; i++){
-            a.add(scan.nextInt());
-        }
-
-        rec(n, a);
+        rec(n);
     }
-    public static void rec(int n, ArrayList<Integer> a){
-        if (n < 15)return;
-        System.out.print(a.get(n-1));
+    public static void rec(int n){
+        if (n < 1)return;
+        int a = scan.nextInt();
+        rec(n-1);
+        System.out.print(a);
         System.out.print(' ');
-        rec(n-1, a);
     }
 }
