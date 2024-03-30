@@ -1,6 +1,4 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Scanner;
 
 public class Main {
@@ -21,7 +19,7 @@ public class Main {
 
                 m.get(i).add(0);
         }
-        rec(0, 0, 1, 0);
+        fillSpiral(0, 0, 1, 0);
         for(int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 System.out.print(m.get(i).get(j));
@@ -31,7 +29,7 @@ public class Main {
         }
     }
 
-    public static void rec(int y, int x, int t, int direction){
+    public static void fillSpiral(int y, int x, int t, int direction){
         m.get(y).set(x, t);
 
         switch (direction){
@@ -57,7 +55,7 @@ public class Main {
         int toY = y + dY[direction];
 
         if (toX >= 0 && toX < n && toY >= 0 && toY < n && m.get(toY).get(toX) == 0)
-            rec(toY, toX, t+1, direction);
+            fillSpiral(toY, toX, t+1, direction);
 
     }
 }
