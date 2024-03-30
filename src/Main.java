@@ -12,9 +12,8 @@ public class Main {
     }
     public static void rec(int n){
         if (n < 1)return;
-        int a = scan.nextInt();
+        String a = scan.nextLine();
         rec(n-1);
-        System.out.print(a);
-        System.out.print(' ');
+        System.out.println(a);
     }
 }
