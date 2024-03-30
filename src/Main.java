@@ -11,7 +11,7 @@ public class Main {
         rec(n);
     }
     public static void rec(int n){
-        if (n < 1)return;
+        if (n < 0)return;
         String a = scan.nextLine();
         rec(n-1);
         System.out.println(a);
