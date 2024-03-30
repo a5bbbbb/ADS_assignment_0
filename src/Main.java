@@ -1,18 +1,24 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
-
+        ArrayList<Integer> a = new ArrayList<>();
         int n = scan.nextInt();
-        int b = scan.nextInt();
+        for(int i = 0; i < n; i++){
+            a.add(scan.nextInt());
+        }
 
-        System.out.println(rec(n, b));
+        rec(n, a);
     }
-    public static long rec(int n, int b){
-        if (n <= 0)return 1;
-        return rec(n-1, b)*b + 1;
+    public static void rec(int n, ArrayList<Integer> a){
+        if (n < 15)return;
+        System.out.print(a.get(n-1));
+        System.out.print(' ');
+        rec(n-1, a);
     }
 }
